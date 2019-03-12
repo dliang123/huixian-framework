@@ -1,0 +1,5 @@
+rootProject.name = 'huixian-framework'
+include 'gateway'
+include 'eureka'
+include 'api-service'
+
