@@ -1,3 +1,6 @@
+group 'com.huixian.framework'
+version '1.0-SNAPSHOT'
+
 buildscript {
     ext {
         springBootVersion = '2.0.5.RELEASE'
@@ -9,9 +12,6 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
-
-group 'com.huixian.framework'
-version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
@@ -30,13 +30,10 @@ dependencyManagement {
     }
 }
 dependencies {
-
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.cloud:spring-cloud-starter-gateway")
+//    compile('org.springframework:spring-context-support')
     compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     compile("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
-    compile("org.springframework.cloud:spring-cloud-starter-contract-stub-runner"){
-        exclude group: "org.springframework.boot", module: "spring-boot-starter-web"
-    }
+    compile("org.springframework.cloud:spring-cloud-starter-openfeign")
+    compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
